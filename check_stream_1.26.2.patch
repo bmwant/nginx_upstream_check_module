@@ -144,6 +144,7 @@ index ae3bf37a6..32c3f8b2a 100644
          peer[i].max_conns = 0;
          peer[i].max_fails = 1;
          peer[i].fail_timeout = 10;
++
 +    #if (NGX_STREAM_UPSTREAM_CHECK)
 +        peer[i].check_index = (ngx_uint_t) NGX_ERROR;
 +    #endif
@@ -155,6 +156,7 @@ index ae3bf37a6..32c3f8b2a 100644
          peer[0].max_conns = 0;
          peer[0].max_fails = 1;
          peer[0].fail_timeout = 10;
++
 +    #if (NGX_STREAM_UPSTREAM_CHECK)
 +        peer[0].check_index = (ngx_uint_t) NGX_ERROR;
 +    #endif
@@ -166,6 +168,7 @@ index ae3bf37a6..32c3f8b2a 100644
              peer[i].max_conns = 0;
              peer[i].max_fails = 1;
              peer[i].fail_timeout = 10;
++
 +        #if (NGX_STREAM_UPSTREAM_CHECK)
 +            peer[i].check_index = (ngx_uint_t) NGX_ERROR;
 +        #endif
@@ -207,6 +210,7 @@ index bd96667ba..8baca5dd9 100644
  
      ngx_uint_t                       max_fails;
      time_t                           fail_timeout;
++
 +#if (NGX_STREAM_UPSTREAM_CHECK)
 +    ngx_uint_t                       check_index;
 +#endif
